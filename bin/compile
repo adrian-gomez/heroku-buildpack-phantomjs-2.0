@@ -24,9 +24,11 @@ echo "-----> Extracting PhantomJS ${VERSION} binaries to ${BUILD_DIR}/vendor/pha
 mkdir -p $BUILD_DIR/vendor
 cd $CACHE_DIR
 unzip $FILE_NAME
-rm -rf $ARCHIVE_NAME/examples
-mv $ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
+rm -vrf $ARCHIVE_NAME/examples
+mv -v $ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
 chmod +x $BUILD_DIR/vendor/phantomjs/bin/phantomjs
+
+ls -la $BUILD_DIR/vendor/phantomjs
 
 echo "-----> exporting PATH and LIBRARY_PATH"
 PROFILE_PATH="$BUILD_DIR/.profile.d/phantomjs.sh"
