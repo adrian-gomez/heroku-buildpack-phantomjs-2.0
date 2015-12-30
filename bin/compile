@@ -24,6 +24,7 @@ echo "-----> Extracting PhantomJS ${VERSION} binaries to ${BUILD_DIR}/vendor/pha
 mkdir -p $BUILD_DIR/vendor
 cd $CACHE_DIR
 unzip $FILE_NAME
+rm -rf $ARCHIVE_NAME/examples
 mv $ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
 chmod +x $BUILD_DIR/vendor/phantomjs/bin/phantomjs
 
